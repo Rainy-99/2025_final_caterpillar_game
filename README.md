@@ -25,9 +25,6 @@ caterpillar_game/
 
 └─ README.md
 
-yaml
-Copy code
-
 ---
 
 ## 🎮 目前已完成的功能
