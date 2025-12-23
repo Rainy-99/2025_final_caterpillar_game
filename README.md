@@ -9,12 +9,19 @@
 
 caterpillar_game/
 ├─ main.py # 程式入口，建立視窗
+
 ├─ game/
+
 │ ├─ init.py
+
 │ ├─ app.py # 控制中心（Canvas、鍵盤、主迴圈）
+
 │ ├─ model.py # 遊戲狀態與規則
+
 │ ├─ view.py # 畫面渲染（Canvas）
+
 │ └─ config.py # 遊戲設定（尺寸、顏色、數量）
+
 └─ README.md
 
 yaml
