@@ -5,7 +5,7 @@
 
 ---
 
-## 🎮 遊戲特色
+## 遊戲特色
 - 開始畫面（Menu）與滑動轉場動畫
 - 同時存在多顆葉子
 - 暫停 / 遊戲結束畫面
@@ -27,19 +27,18 @@
 
 ## 📁 專案結構
 caterpillar_game/
-├─ main.py # 程式進入點
+├─ main.py # 程式入口，建立視窗
 ├─ game/
-│ ├─ app.py # 遊戲流程控制（Menu、轉場、輸入、主迴圈、音效）
-│ ├─ model.py # 遊戲邏輯（移動、碰撞、加分、生成葉子）
-│ ├─ view.py # 畫面渲染（Canvas 繪製）
-│ └─ config.py # 遊戲設定常數
-└─ sound/
-  └─ game-start-6104.wav # 開始遊戲音效
-
+│ ├─ init.py
+│ ├─ app.py # 控制中心（Canvas、鍵盤、主迴圈）
+│ ├─ model.py # 遊戲狀態與規則
+│ ├─ view.py # 畫面渲染（Canvas）
+│ └─ config.py # 遊戲設定（尺寸、顏色、數量）
+└─ README.md
 
 ---
 
-## 🧠 遊戲核心設計
+## 遊戲核心設計
 
 ### GameState（model.py）
 - `body: list[Point]`：毛毛蟲身體座標（頭在 index 0）
@@ -69,7 +68,7 @@ caterpillar_game/
 
 ---
 
-## 🔁 遊戲流程控制（app.py）
+## 遊戲流程控制（app.py）
 
 ### 模式狀態
 - `menu`：開始畫面
@@ -86,7 +85,7 @@ caterpillar_game/
 
 ---
 
-## 🎬 開始畫面與轉場動畫
+## 開始畫面與轉場動畫
 - Menu 物件皆使用 `tag="menu"` 管理
 - 按下 Space / Enter 進入轉場模式
 - 使用 `canvas.move("menu", dx, 0)` 讓所有物件滑出畫面
@@ -94,14 +93,14 @@ caterpillar_game/
 
 ---
 
-## 🔊 音效
+## 音效
 使用 `pygame.mixer` 播放音效：
 - 遊戲開始時播放音效
 - 音效邏輯集中於 `app.py`，不影響核心遊戲邏輯
 
 ---
 
-## ▶ 執行方式
+## 執行方式
 
 ### 安裝套件
 ```bash
