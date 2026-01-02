@@ -1,9 +1,4 @@
-"""
-- [ ]  建立 `tk.Tk()` 視窗
-- [ ]  設定視窗標題、大小（可選）
-- [ ]  建立 `App(root)`（把 root 丟給 app）
-- [ ]  `root.mainloop()` 開始事件迴圈
-"""
+# 運行遊戲主程式
 import tkinter as tk
 from game.app import App
 def main():

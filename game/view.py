@@ -1,25 +1,3 @@
-"""
-## 負責畫
-
-### 初始化 TODO
-
-- [ ]  建立 `GameView(canvas)`
-- [ ]  保存 canvas 引用
-
-### 渲染 TODO
-
-- [ ]  `render(state)`：每幀重畫
-    - [ ]  `canvas.delete("all")`
-    - [ ]  畫葉子（綠色方塊）
-    - [ ]  畫毛毛蟲（頭一色、身體一色）
-    - [ ]  畫分數文字
-    - [ ]  若 `not alive` → 畫 Game Over 文字
-
-### 工具 TODO
-
-- [ ]  `_rect(gx, gy, fill=...)`：格子座標 → 像素 → 畫矩形
-
-"""
 from game.model import GameState
 from game.config import CELL, COLOR_HEAD, COLOR_BODY, COLOR_LEAF
 class GameView:
@@ -37,18 +15,18 @@ class GameView:
             self._rect(bx, by, fill=color)
         # 畫分數
         self.canvas.create_text(
-            10, 10, anchor="nw", text=f"Score: {state.score}", fill="black", font=("Arial", 16)
+            15, 10, anchor="nw", text=f"分數: {state.score}", fill="black", font=("Microsoft JhengHei", 24)
         )
         # 畫 Game Over
-        if not state.alive:
-            w = state.w * CELL
-            h = state.h * CELL
-            self.canvas.create_text(
-                w // 2, h // 2, text="GAME OVER", fill="red", font=("Arial", 32)
-            )
-            self.canvas.create_text(
-                w // 2, h // 2 + 60, text="Press R to restart", fill="black", font=("Arial", 24)
-            )
+        # if not state.alive:
+        #     w = state.w * CELL 
+        #     h = state.h * CELL 
+        #     self.canvas.create_text(
+        #         w // 2, h // 2 - 30, text="遊戲結束", fill="red", font=("Microsoft JhengHei", 32, "bold")
+        #     )
+        #     self.canvas.create_text(
+        #         w // 2, h // 2 + 80, text="按 R 重新開始", fill="grey", font=("Microsoft JhengHei", 24)
+        #     )
 
     def _rect(self, gx: int, gy: int, fill: str) -> None:
         x1 = gx * CELL

@@ -1,29 +1,4 @@
-"""
-## （遊戲規則與狀態）
-
-### 狀態（資料）TODO
-
-- [ ]  `body: list[Point]`（毛毛蟲身體，頭在 index 0）
-- [ ]  `direction: str`（目前方向）
-- [ ]  `pending: str | None`（下一步要轉的方向，避免瞬間反向）
-- [ ]  `leaf: Point`（葉子位置）
-- [ ]  `score: int`
-- [ ]  `alive: bool`（是否還活著）
-
-### 行為（規則）TODO
-
-- [ ]  `new()`：建立初始狀態（中間出生、固定長度）
-- [ ]  `turn(key)`：接受鍵盤方向，設定 pending（但不立刻改）
-- [ ]  `step()`：走一步（核心）
-- [ ]  套用 pending（禁止 180 度反向）
-- [ ]  計算新頭座標
-- [ ]  撞牆 → `alive = False`
-- [ ]  撞自己 → `alive = False`
-- [ ]  把新頭插入 `body[0]`
-- [ ]  吃到 leaf → 加分、長大、不 pop 尾巴、生成新 leaf
-- [ ]  沒吃到 → 正常移動（pop 尾巴）
-- [ ]  `_spawn_leaf()`：產生葉子（不能在 body 上）
-"""
+# 遊戲邏輯
 from __future__ import annotations # 允許類別內部引用自身類型
 
 import random
