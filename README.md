@@ -105,5 +105,5 @@ caterpillar_game/
 ### 安裝套件
 ```bash
 pip install pygame
-
+```
 ### 運行 main.py
